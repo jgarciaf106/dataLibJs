@@ -1,0 +1,26 @@
+{
+  "name": "datalibjs",
+  "version": "1.0.9",
+  "description": "A small library for gathering data and creating reports.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgarciaf106/dataLibJs.git"
+  },
+  "keywords": [
+    "datalibjs"
+  ],
+  "author": "Andres Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgarciaf106/dataLibJs/issues"
+  },
+  "homepage": "https://github.com/jgarciaf106/dataLibJs#readme",
+  "dependencies": {
+    "msnodesqlv8": "^2.4.7",
+    "mssql": "^8.1.0"
+  }
+}
