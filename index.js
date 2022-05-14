@@ -1,5 +1,7 @@
-const data = require("./src/data");
-const database = require("./src/database");
+const data = require("./src/data.js");
+const database = require("./src/database.js");
 
-module.exports = data;
-module.exports = database;
+const Data = data.Data;
+const DataBase = database.DataBase;
+
+module.exports = {Data, DataBase};

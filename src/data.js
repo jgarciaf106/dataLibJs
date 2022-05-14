@@ -1,8 +1,10 @@
 const sql = require("mssql/msnodesqlv8");
-const utils = require("./utils");
+const dfd = require("danfojs-node")
+const utils = require("./utils.js");
 const path = require('path');
 
 class Data {
+
 
   constructor(config) {
     this.cfg = config
@@ -45,7 +47,7 @@ class Data {
       }
 
       else {
-        paths = createPath()
+        let paths = createPath()
         this.inputPath = paths[0]
         this.outputPath = paths[1]
         this.queryPath = paths[2]
@@ -54,7 +56,7 @@ class Data {
     }
   }
 
-  runSqlQuery = async (query, dbEngine, queryParams) => {
+  runSqlQuery = async (query, dbEngine, queryParams = {}) => {
 
     const isEmpty = Object.keys(queryParams).length === 0;
 
@@ -62,8 +64,7 @@ class Data {
       if (isEmpty) {
         try {
           await sql.connect(dbEngine);
-          const result = await sql.query(query);
-          console.log(result.recordset);
+          result = await sql.query(query);
         } catch (err) {
           console.dir(err);
         }
@@ -71,8 +72,7 @@ class Data {
       else {
         try {
           await sql.connect(dbEngine);
-          const result = await sql.query(query.format(queryParams));
-          console.log(result.recordset);
+          result = await sql.query(query.format(queryParams));
         } catch (err) {
           console.dir(err);
         }
@@ -82,8 +82,9 @@ class Data {
       if (isEmpty) {
         try {
           await sql.connect(dbEngine);
-          const result = await sql.query(query);
-          console.log(result.recordset);
+          result = await sql.query(query);
+          let df = new dfd.DataFrame(result.recordset);
+          return df;
         } catch (err) {
           console.dir(err);
         }
@@ -91,8 +92,8 @@ class Data {
       else {
         try {
           await sql.connect(dbEngine);
-          const result = await sql.query(query.format(queryParams));
-          console.log(result);
+          result = await sql.query(query.format(queryParams));
+          return result.recordset;
         } catch (err) {
           console.dir(err);
         }
@@ -100,7 +101,15 @@ class Data {
 
     }
     sql.close();
+
+
+  }
+
+  getMessage = () => {
+    console.log('Data Instance Working');
   }
 }
 
-module.exports = Data;
+module.exports = {
+  Data:Data
+}
