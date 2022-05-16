@@ -1,11 +1,11 @@
 {
   "name": "datalibjs",
-  "version": "1.5.5",
+  "version": "1.6.3",
   "description": "A small library for gathering data and creating reports.",
   "main": "index.js",
+  "bin": "./cli.js",
   "scripts": {
-    "test": "node ./test/test.js",
-    "pubversion": "npm publish && npm i datalibjs"
+    "test": "node ./test/test.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/jgarciaf106/dataLibJs#readme",
   "dependencies": {
-    "danfojs-node": "^1.1.1",
+    "datalibjs": "^1.6.3",
     "msnodesqlv8": "^2.4.7",
     "mssql": "^8.1.0"
   }
