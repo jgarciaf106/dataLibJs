@@ -4,8 +4,8 @@
   "description": "A small library for gathering data and creating reports.",
   "main": "index.js",
   "bin": {
-    "create_folders" : "./cf.js",
-    "create_notebook" : "./nb.js"
+    "create_folders": "./cf.js",
+    "create_notebook": "./nb.js"
   },
   "scripts": {
     "test": "node ./test/test.js"

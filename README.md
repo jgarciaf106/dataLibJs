@@ -13,6 +13,9 @@ $ npm -v && node -v
 8.1.2
 v16.13.2
 ```
+Install [Node.js Notebooks (REPL)](https://marketplace.visualstudio.com/items?itemName=donjayamanne.typescript-notebook) as this will be the required notebook where you will perform the data analysis.
+
+## Getting Started
 Start with creating a folder where you will work on your reporting tasks:
 
 Open your folder with vscode.
