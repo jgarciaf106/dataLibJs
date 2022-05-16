@@ -1,0 +1,60 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Title\r\n\r\nNotebooktitle\r\n\r\n## Purpose\r\n\r\nJavascript Analysis - Data Request.\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "# Setup\r\n\r\n## Library import\r\n\r\nWe import all the required Javascript libraries\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const { Data, DataBase } = require('datalibjs');"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "# Parameter definition\r\n\r\nWe set all relevant parameters for our notebook. By convention, parameters are uppercase, while all the\r\nother variables follow Javascript's guidelines.\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const config = { \r\n    database: \"hrods\",\r\n    server: \"localhost\",\r\n    port: 1433,\r\n    trustedConn: true,\r\n   }"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// init get data class\r\nconst db = new DataBase(config);\r\nconst od = new Data(config);\r\n\r\n// set db engine\r\nlet engine = db.setEngine();\r\n\r\n// default folder paths\r\nod.set_path()"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "# Data import\r\n\r\nWe retrieve all the required data for the analysis.\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "# Data processing\r\n\r\nPut here the core of the notebook. Feel free to further split this section into subsections."
+            ],
+            "outputs": []
+        }
+    ]
+}

@@ -16,6 +16,18 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "Error",
+                                "message": "Cannot find module 'danfojs-node'\nRequire stack:\n- c:\\Users\\garciand\\AndresGarcia\\Development\\Javascript\\dataLibJs\\node_modules\\datalibjs\\src\\data.js\n- c:\\Users\\garciand\\AndresGarcia\\Development\\Javascript\\dataLibJs\\node_modules\\datalibjs\\index.js\n- <repl>",
+                                "stack": "    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)\n    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (c:\\Users\\garciand\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\resources\\scripts\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js:679:30)\n    at Function.Module._load (node:internal/modules/cjs/loader:778:27)\n    at Function._._load (c:\\Users\\garciand\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:115372)\n    at Module.require (node:internal/modules/cjs/loader:1005:19)\n    at require (node:internal/modules/cjs/helpers:102:18)\n    at Object.<anonymous> (c:\\Users\\garciand\\AndresGarcia\\Development\\Javascript\\dataLibJs\\node_modules\\datalibjs\\src\\data.js:2:13)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)"
+                            }
+                        }
+                    ]
                 }
             ]
         },

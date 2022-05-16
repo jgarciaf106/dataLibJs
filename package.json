@@ -1,9 +1,12 @@
 {
   "name": "datalibjs",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "A small library for gathering data and creating reports.",
   "main": "index.js",
-  "bin": "./cli.js",
+  "bin": {
+    "create_folders" : "./cf.js",
+    "create_notebook" : "./nb.js"
+  },
   "scripts": {
     "test": "node ./test/test.js"
   },
@@ -21,7 +24,6 @@
   },
   "homepage": "https://github.com/jgarciaf106/dataLibJs#readme",
   "dependencies": {
-    "datalibjs": "^1.6.3",
     "msnodesqlv8": "^2.4.7",
     "mssql": "^8.1.0"
   }
