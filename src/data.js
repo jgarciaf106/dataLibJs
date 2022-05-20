@@ -1,5 +1,4 @@
 const sql = require("mssql/msnodesqlv8");
-const dfd = require("danfojs-node")
 const utils = require("./utils.js");
 const path = require('path');
 
@@ -64,7 +63,7 @@ class Data {
       if (isEmpty) {
         try {
           await sql.connect(dbEngine);
-          result = await sql.query(query);
+          const result = await sql.query(query);
         } catch (err) {
           console.dir(err);
         }
@@ -72,7 +71,7 @@ class Data {
       else {
         try {
           await sql.connect(dbEngine);
-          result = await sql.query(query.format(queryParams));
+          const result = await sql.query(query.format(queryParams));
         } catch (err) {
           console.dir(err);
         }
@@ -82,9 +81,8 @@ class Data {
       if (isEmpty) {
         try {
           await sql.connect(dbEngine);
-          result = await sql.query(query);
-          let df = new dfd.DataFrame(result.recordset);
-          return df;
+          const result = await sql.query(query);
+          console.table(result.recordset);
         } catch (err) {
           console.dir(err);
         }
@@ -92,7 +90,7 @@ class Data {
       else {
         try {
           await sql.connect(dbEngine);
-          result = await sql.query(query.format(queryParams));
+          const result = await sql.query(query.format(queryParams));
           return result.recordset;
         } catch (err) {
           console.dir(err);

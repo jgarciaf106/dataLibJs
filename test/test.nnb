@@ -16,16 +16,23 @@
                             ]
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const sql = require(\"mssql/msnodesqlv8\");\r\nconst runSqlQuery = async (query, dbEngine) => {\r\n  try {\r\n    await sql.connect(dbEngine);\r\n    const result = await sql.query(query).recordset;\r\n    console.table(result);\r\n  } catch (err) {\r\n    console.dir(err);\r\n  }\r\n}"
+            ],
+            "outputs": [
                 {
                     "items": [
                         {
-                            "mime": "application/vnd.code.notebook.error",
-                            "value": {
-                                "name": "Error",
-                                "message": "Cannot find module 'danfojs-node'\nRequire stack:\n- c:\\Users\\garciand\\AndresGarcia\\Development\\Javascript\\dataLibJs\\node_modules\\datalibjs\\src\\data.js\n- c:\\Users\\garciand\\AndresGarcia\\Development\\Javascript\\dataLibJs\\node_modules\\datalibjs\\index.js\n- <repl>",
-                                "stack": "    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)\n    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (c:\\Users\\garciand\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\resources\\scripts\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js:679:30)\n    at Function.Module._load (node:internal/modules/cjs/loader:778:27)\n    at Function._._load (c:\\Users\\garciand\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:115372)\n    at Module.require (node:internal/modules/cjs/loader:1005:19)\n    at require (node:internal/modules/cjs/helpers:102:18)\n    at Object.<anonymous> (c:\\Users\\garciand\\AndresGarcia\\Development\\Javascript\\dataLibJs\\node_modules\\datalibjs\\src\\data.js:2:13)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)"
-                            }
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
                         }
                     ]
                 }
@@ -34,7 +41,7 @@
         {
             "language": "typescript",
             "source": [
-                "od.runSqlQuery(\"Select * From fedl1\",engine);"
+                "runSqlQuery(\"Select * From fedl1\",engine);"
             ],
             "outputs": [
                 {
@@ -42,46 +49,7 @@
                         {
                             "mime": "application/vnd.code.notebook.stdout",
                             "value": [
-                                "┌─────────┬───────────────────────────┬─────────────────────────────┬───────────────────────────────┐",
-                                "│ (index) │ Business Lvl 4 (MRU) Code │ Business Lvl 1 (Group) Code │  Business Lvl 1 (Group) Desc  │",
-                                "├─────────┼───────────────────────────┼─────────────────────────────┼───────────────────────────────┤",
-                                "│    0    │          'F589'           │           'HPIP'            │    'Imaging and Printing'     │",
-                                "│    1    │          'F596'           │           'HPIP'            │    'Imaging and Printing'     │",
-                                "│    2    │          'F529'           │           'HPIP'            │    'Imaging and Printing'     │",
-                                "│    3    │          'F528'           │           'HCCO'            │   'Commercial Organization'   │",
-                                "│    4    │          'G717'           │           'HCCO'            │   'Commercial Organization'   │",
-                                "│    5    │          'G718'           │           'HCCO'            │   'Commercial Organization'   │",
-                                "│    6    │          'G719'           │           'HCCO'            │   'Commercial Organization'   │",
-                                "│    7    │          'F594'           │           'HCCO'            │   'Commercial Organization'   │",
-                                "│    8    │          'F601'           │           'HPHR'            │       'Human Resources'       │",
-                                "│    9    │          'F597'           │            'FIN'            │         'WW Finance'          │",
-                                "│   10    │          'F598'           │            'FIN'            │         'WW Finance'          │",
-                                "│   11    │          'F599'           │            'FIN'            │         'WW Finance'          │",
-                                "│   12    │          'F600'           │            'FIN'            │         'WW Finance'          │",
-                                "│   13    │          'F588'           │            'FIN'            │         'WW Finance'          │",
-                                "│   14    │          'F603'           │           'HPGC'            │    'Global Legal Affairs'     │",
-                                "│   15    │          'F602'           │            'CMP'            │  'Corp Marketing and Comms'   │",
-                                "│   16    │          'F580'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   17    │          'F581'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   18    │          'F582'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   19    │          'F583'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   20    │          'F584'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   21    │          'F585'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   22    │          'F586'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   23    │          'F587'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   24    │          'G024'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   25    │          'G095'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   26    │          'G096'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   27    │          'G106'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   28    │          'F590'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   29    │          'F592'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   30    │          'F591'           │           'HPCS'            │      'Customer Support'       │",
-                                "│   31    │          'F593'           │           'OPER'            │         'Operations'          │",
-                                "│   32    │          'F595'           │           'HPTO'            │   'Chief Technology Office'   │",
-                                "│   33    │          'F604'           │            'SBM'            │ 'Strategy and Bus Management' │",
-                                "│   34    │          'G792'           │           'PSYS'            │      'Personal Systems'       │",
-                                "│   35    │          'G793'           │           'PSYS'            │      'Personal Systems'       │",
-                                "└─────────┴───────────────────────────┴─────────────────────────────┴───────────────────────────────┘",
+                                "undefined",
                                 "",
                                 ""
                             ]
@@ -89,6 +57,13 @@
                     ]
                 }
             ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
         }
     ]
 }
